@@ -6,7 +6,7 @@ import javafx.stage.Stage;
 import com.esri.arcgisruntime.mapping.ArcGISMap;
 import com.esri.arcgisruntime.mapping.Basemap;
 import com.esri.arcgisruntime.mapping.view.MapView;
-
+import com.esri.arcgisruntime.mapping.Viewpoint;
 import javax.swing.JOptionPane;
 public class MyMapApp extends Application {
     private  MapView mapView;
@@ -16,18 +16,20 @@ public class MyMapApp extends Application {
         StackPane stackPane = new StackPane();
         Scene scene = new Scene(stackPane);
         // set title, size, and add scene to stage
-        stage.setTitle("Display Map Sample");
-        stage.setWidth(800);
-        stage.setHeight(700);
+        stage.setTitle("National Geographic: Newfoundland");
+        stage.setWidth(900);
+        stage.setHeight(900);
         stage.setScene(scene);
         stage.show();
-        // create a ArcGISMap with the a Basemap instance with an Imagery base layer
-        ArcGISMap map = new ArcGISMap(Basemap.createImagery());
-        // must be an ArcGIS Online or local ArcGIS Portal map.
-        //map.setBasemap(new Basemap("https://www.arcgis.com/home/webmap/viewer.html?webmap=b834a68d7a484c5fb473d4ba90d35e71"));
+        // create a ArcGISMap with the a Basemap instance with a National Geographic base layer
+        ArcGISMap map = new ArcGISMap(Basemap.createNationalGeographic());
         // set the map to be displayed in this view
         mapView = new MapView();
         mapView.setMap(map);
+        // set the viewpoint - this must be done after the setMap call above
+        Viewpoint viewPoint = new Viewpoint(50.0, -53.5, 4100000);
+        mapView.setViewpoint(viewPoint);
+
         // add the map view to stack pane
         stackPane.getChildren().addAll(mapView);
     }
