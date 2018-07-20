@@ -27,7 +27,7 @@ public class MyMapApp extends Application {
         mapView = new MapView();
         mapView.setMap(map);
         // set the viewpoint - this must be done after the setMap call above
-        Viewpoint viewPoint = new Viewpoint(50.0, -53.5, 4100000);
+        Viewpoint viewPoint = new Viewpoint(49.1, -55.8, 4100000);
         mapView.setViewpoint(viewPoint);
 
         // add the map view to stack pane
