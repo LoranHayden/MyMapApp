@@ -12,7 +12,9 @@
         <CLASSES>
           <root url="jar://C:/arcgis-runtime-sdk-java-100.3.0/arcgis-runtime-sdk-java-100.3.0/libs/arcgis-java-api.jar!/" />
         </CLASSES>
-        <JAVADOC />
+        <JAVADOC>
+          <root url="file://C:/arcgis-runtime-sdk-java-100.3.0/arcgis-runtime-sdk-java-100.3.0/libs/arcgis-java-api-javadoc.jar" />
+        </JAVADOC>
         <SOURCES />
       </library>
     </orderEntry>
